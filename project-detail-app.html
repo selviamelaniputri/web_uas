@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mobile App</title>
+  <meta name="viewport" content="width1200">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="project-detail-page figma-detail">
+
+<section class="album">
+  <div class="album-inner">
+    <div class="album-center">
+
+      <a href="projects.html" class="back">← back</a>
+
+      <h1 class="album-title">Mobile App</h1>
+      <div class="divider"></div>
+
+      <!-- SATU FOTO TENGAH -->
+      <div class="figma-single">
+        <img src="lit.jpg" alt="UI Design Figma">
+      </div>
+
+      <div class="desc"> Sebuah Mobile App untuk platform e-commerce Skincare/Kecantikan</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AUDIO -->
+<audio id="bgMusic" loop>
+  <source src="nj7.mp3" type="audio/mpeg">
+</audio>
+
+<!-- BUTTON PLAY -->
+<button id="playMusic" class="music-btn">▶ play music</button>
+
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("playMusic");
+
+btn.addEventListener("click", () => {
+  music.volume = 0.5;
+  music.play();
+  btn.style.display = "none"; // tombol hilang setelah play
+});
+</script>
+
+<script>
+/* LOAD THEME */
+if (localStorage.getItem("theme") === "pink") {
+  document.body.classList.add("pink-mode");
+}
+</script>
+
+</body>
+</html>

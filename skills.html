@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Skills</title>
+  <meta name="viewport" content="width1200">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="skills-page">
+
+<section class="album">
+  <div class="album-inner">
+
+        <!-- Y2K DECOR ICONS -->
+    <img src="skills1.png" class="decor s1" alt="">
+    <img src="skills2.png" class="decor s2" alt="">
+    <img src="skills3.png" class="decor s3" alt="">
+    <img src="skills4.png" class="decor s4" alt="">
+    <img src="skills5.png" class="decor s5" alt="">
+    <div class="album-center">
+
+      <!-- BACK -->
+      <a href="index.html" class="back">← back</a>
+
+      <h1 class="album-title">Skills</h1>
+      <div class="divider"></div>
+
+      <div class="tracklist">
+
+        <div class="track">
+          <div class="track-left">
+            <div class="track-icon y2k">
+              <img src="html.jpg" alt="HTML">
+            </div>
+            <div>
+              <div class="track-no">01</div>
+              <div class="track-title">HTML</div>
+            </div>
+          </div>
+          <div class="track-percent">90%</div>
+        </div>
+
+        <div class="track">
+          <div class="track-left">
+            <div class="track-icon y2k">
+              <img src="css.jpg" alt="CSS">
+            </div>
+            <div>
+              <div class="track-no">02</div>
+              <div class="track-title">CSS Styling</div>
+            </div>
+          </div>
+          <div class="track-percent">85%</div>
+        </div>
+
+        <div class="track">
+          <div class="track-left">
+            <div class="track-icon y2k">
+              <img src="Javascript.jpg"JavaScript">
+            </div>
+            <div>
+              <div class="track-no">03</div>
+              <div class="track-title">JavaScript</div>
+            </div>
+          </div>
+          <div class="track-percent">70%</div>
+        </div>
+
+        <div class="track">
+          <div class="track-left">
+            <div class="track-icon y2k">
+              <img src="UI.jpg"UI Design">
+            </div>
+            <div>
+              <div class="track-no">04</div>
+              <div class="track-title">UI Design</div>
+            </div>
+          </div>
+          <div class="track-percent">80%</div>
+        </div>
+
+        <div class="track">
+          <div class="track-left">
+            <div class="track-icon y2k">
+              <img src="photo.jpg" alt="Photo Editing">
+            </div>
+            <div>
+              <div class="track-no">05</div>
+              <div class="track-title">Photo Editing</div>
+            </div>
+          </div>
+          <div class="track-percent">90%</div>
+        </div>
+
+        <div class="track">
+          <div class="track-left">
+            <div class="track-icon y2k">
+              <img src="video.jpg"Video Editing">
+            </div>
+            <div>
+              <div class="track-no">06</div>
+              <div class="track-title">Video Editing</div>
+            </div>
+          </div>
+          <div class="track-percent">80%</div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AUDIO -->
+<audio id="bgMusic" loop>
+  <source src="nj3.mp3" type="audio/mpeg">
+</audio>
+
+<!-- BUTTON PLAY -->
+<button id="playMusic" class="music-btn">▶ play music</button>
+
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("playMusic");
+
+btn.addEventListener("click", () => {
+  music.volume = 0.5;
+  music.play();
+  btn.style.display = "none"; // tombol hilang setelah play
+});
+</script>
+
+<script>
+/* LOAD THEME */
+if (localStorage.getItem("theme") === "pink") {
+  document.body.classList.add("pink-mode");
+}
+</script>
+
+</body>
+</html>

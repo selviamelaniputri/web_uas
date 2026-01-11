@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>About</title>
+  <meta name="viewport" content="width1200">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="album">
+  <div class="album-inner">
+
+    <!-- Y2K DECOR ICONS -->
+    <img src="about1.png" class="decor d1" alt="">
+    <img src="about2.png" class="decor d2" alt="">
+    <img src="about3.png" class="decor d3" alt="">
+    <img src="about4.png" class="decor d4" alt="">
+    <img src="about5.png" class="decor d5" alt="">
+    <img src="about6.png" class="decor d6" alt="">
+    <img src="about7.png" class="decor d7" alt="">
+
+    <div class="album-center">
+
+      <h1 class="page-title">about</h1>
+      <div class="divider"></div>
+
+      <div class="about-box">
+        <p class="about-text">
+          Hi! I’m <b>Selvia Melani Putri</b> ✿<br><br>
+
+          I’m a college student who loves creating simple, aesthetic, and meaningful digital experiences.
+          Inspired by early 2000s visuals, soft colors, and nostalgic vibes, I enjoy combining
+          design and code into something calm and personal.<br><br>
+
+          I’m currently learning web development, focusing on HTML, CSS, and basic JavaScript.
+          For me, building a website is not only about functionality, but also about feeling —
+          how it looks, how it moves, and how it makes people feel.<br><br>
+
+          This portfolio is a small collection of my journey, experiments, and memories,
+          wrapped in a soft Y2K atmosphere ♡
+        </p>
+      </div>
+
+      <a href="index.html" class="about-back">← back</a>
+
+    </div>
+  </div>
+</section>
+
+<!-- AUDIO -->
+<audio id="bgMusic" loop>
+  <source src="nj2.mp3" type="audio/mpeg">
+</audio>
+
+<!-- BUTTON PLAY -->
+<button id="playMusic" class="music-btn">▶ play music</button>
+
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("playMusic");
+
+btn.addEventListener("click", () => {
+  music.volume = 0.5;
+  music.play();
+  btn.style.display = "none"; // tombol hilang setelah play
+});
+</script>
+
+<script>
+/* LOAD THEME */
+if (localStorage.getItem("theme") === "pink") {
+  document.body.classList.add("pink-mode");
+}
+</script>
+
+</body>
+</html>

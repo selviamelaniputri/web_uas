@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects</title>
+  <meta name="viewport" content="width1200">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="projects-page">
+
+<section class="album">
+  <div class="album-inner">
+
+    <!-- Y2K DECOR ICONS -->
+    <img src="project1.png" class="decor s1" alt="">
+    <img src="skills2.png" class="decor s2" alt="">
+    <img src="skills3.png" class="decor s3" alt="">
+    <img src="about1.png" class="decor s4" alt="">
+
+    <div class="album-center">
+
+      <a href="index.html" class="back">← back</a>
+
+      <h1 class="album-title">projects</h1>
+      <div class="divider"></div>
+
+      <div class="cd-grid">
+
+        <a href="project-detail.html" class="cd-card">
+          <div class="cd-disc">
+            <img src="WEB.jpg" alt="Project 1">
+          </div>
+          <div class="cd-title">Portfolio Website</div>
+          <div class="cd-desc">HTML • CSS • JS</div>
+        </a>
+
+        <a href="project-detail-app.html" class="cd-card">
+          <div class="cd-disc">
+            <img src="app.jpg" alt="Project 2">
+          </div>
+          <div class="cd-title">Mobile App</div>
+          <div class="cd-desc">Pembuatan Aplikasi</div>
+        </a>
+
+        <a href="project-detail-canva.html" class="cd-card">
+          <div class="cd-disc">
+            <img src="CANVA.jpg" alt="Project 3">
+          </div>
+          <div class="cd-title">Desain Photo</div>
+          <div class="cd-desc">Canva</div>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- AUDIO -->
+<audio id="bgMusic" loop>
+  <source src="nj4.mp3" type="audio/mpeg">
+</audio>
+
+<!-- BUTTON PLAY -->
+<button id="playMusic" class="music-btn">▶ play music</button>
+
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("playMusic");
+
+btn.addEventListener("click", () => {
+  music.volume = 0.5;
+  music.play();
+  btn.style.display = "none"; // tombol hilang setelah play
+});
+</script>script>
+
+<script>
+/* LOAD THEME */
+if (localStorage.getItem("theme") === "pink") {
+  document.body.classList.add("pink-mode");
+}
+</script>
+
+</body>
+</html>

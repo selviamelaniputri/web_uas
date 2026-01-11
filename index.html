@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>My Y2K Portfolio</title>
+  <meta name="viewport" content="width1200">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= AUDIO ================= -->
+<audio id="bgMusic" loop>
+  <source src="nj.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ================= PLAY MUSIC BUTTON ================= -->
+<div id="music-start" onclick="toggleMusic()">
+  ▶ play music
+</div>
+
+<!-- ================= THEME BUTTON ================= -->
+<button id="themeBtn" class="theme-btn">🌸 pink mode</button>
+
+<section class="album">
+  <div class="album-inner">
+
+    <!-- Y2K ICONS -->
+    <img src="y2k1.png" class="y2k-icon cd1" alt="">
+    <img src="y2k2.png" class="y2k-icon cd2" alt="">
+    <img src="y2k3.png" class="y2k-icon ipod" alt="">
+    <img src="y2k4.png" class="y2k-icon cart" alt="">
+    <img src="y2k5.png" class="y2k-icon headphone" alt="">
+    <img src="y2k6.png" class="y2k-icon cloud" alt="">
+
+    <div class="album-center">
+
+      <div class="stamp">est. 2000s</div>
+
+      <div class="photo-wrap">
+        <img src="me.jpg" alt="Foto Saya">
+      </div>
+
+      <h1 class="album-title">
+        SELVIA<br>MELANI PUTRI
+      </h1>
+
+      <div class="divider"></div>
+
+      <p class="album-sub">'Cause I know what you like, boy~</p>
+
+      <div class="album-nav">
+        <a href="about.html">about</a>
+        <a href="skills.html">skills</a>
+        <a href="projects.html">projects</a>
+        <a href="contact.html">contact</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+/* ================= MUSIC ================= */
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("music-start");
+
+function toggleMusic() {
+  if (music.paused) {
+    music.volume = 0.5;
+    music.play();
+    musicBtn.textContent = "⏸ pause music";
+    localStorage.setItem("musicAllowed", "yes");
+  } else {
+    music.pause();
+    musicBtn.textContent = "▶ play music";
+    localStorage.setItem("musicAllowed", "no");
+  }
+}
+
+/* autoplay jika sudah pernah klik */
+if (localStorage.getItem("musicAllowed") === "yes") {
+  music.volume = 0.5;
+  music.play();
+  musicBtn.textContent = "⏸ pause music";
+}
+
+/* ================= THEME ================= */
+const themeBtn = document.getElementById("themeBtn");
+
+/* load theme */
+if (localStorage.getItem("theme") === "pink") {
+  document.body.classList.add("pink-mode");
+  themeBtn.textContent = "💙 blue mode";
+}
+
+themeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("pink-mode");
+
+  if (document.body.classList.contains("pink-mode")) {
+    localStorage.setItem("theme", "pink");
+    themeBtn.textContent = "💙 blue mode";
+  } else {
+    localStorage.setItem("theme", "blue");
+    themeBtn.textContent = "🌸 pink mode";
+  }
+});
+</script>
+<body class="desktop-force">
+</body>
+</body>
+</html>

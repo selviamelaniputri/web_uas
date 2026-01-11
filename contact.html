@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact</title>
+  <meta name="viewport" content="width1200">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="contact-page">
+
+<section class="album">
+  <div class="album-inner">
+
+            <!-- Y2K DECOR ICONS -->
+    <img src="contact1.png" class="decor c1" alt="">
+    <img src="contact2.png" class="decor c2" alt="">
+    <img src="contact3.png" class="decor c3" alt="">
+    <img src="contact4.png" class="decor c4" alt="">
+    <img src="contact5.png" class="decor c5" alt="">
+    <img src="contact6.png" class="decor c6" alt="">
+    <img src="contact7.png" class="decor c7" alt="">
+    <div class="album-center">
+
+    <div class="album-center">
+
+      <!-- BACK -->
+      <a href="index.html" class="back">← back</a>
+
+      <h1 class="album-title">contact</h1>
+      <div class="divider"></div>
+
+      <!-- CONTACT CARD -->
+      <div class="contact-card">
+
+        <!-- TAPE -->
+        <div class="tape"></div>
+
+        <!-- PHOTO -->
+        <div class="contact-photo">
+          <img src="me.jpg" alt="My Photo">
+        </div>
+
+        <!-- NAME -->
+        <h2 class="contact-name">SELVIA MELANI PUTRI</h2>
+        <p class="contact-sub">Contact below ♡</p>
+
+        <!-- LINKS -->
+        <div class="contact-links">
+          <a href="mailto:selviamelaniputri06@gmail.com">✉ email</a>
+          <a href="https://www.instagram.com/_selviaptri?igsh=Y3JmZmJxcXZ6aDlp" target="_blank">📸 instagram</a>
+          <a href="https://github.com/username" target="_blank">💻 github</a>
+          <a href="https://wa.me/628xxxxxxxxxx" target="_blank">📱 whatsapp</a>
+        </div>
+
+        <!-- SPARKLE -->
+        <span class="contact-sparkle s1">✦</span>
+        <span class="contact-sparkle s2">✧</span>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AUDIO -->
+<audio id="bgMusic" loop>
+  <source src="nj5.mp3" type="audio/mpeg">
+</audio>
+
+<!-- BUTTON PLAY -->
+<button id="playMusic" class="music-btn">▶ play music</button>
+
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("playMusic");
+
+btn.addEventListener("click", () => {
+  music.volume = 0.5;
+  music.play();
+  btn.style.display = "none"; // tombol hilang setelah play
+});
+</script>
+
+<script>
+/* LOAD THEME */
+if (localStorage.getItem("theme") === "pink") {
+  document.body.classList.add("pink-mode");
+}
+</script>
+
+</body>
+</html>

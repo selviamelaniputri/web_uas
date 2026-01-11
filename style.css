@@ -1,0 +1,1128 @@
+:root {
+  --blue: #1F3FB7;
+  --cream: #FAF7F2;
+}
+
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Times New Roman", serif;
+  color: var(--blue);
+  background: var(--cream);
+}
+
+/* ================= COVER ================= */
+.album {
+  width: 100vw;
+  height: 100vh;
+  padding: 40px;
+}
+
+.album-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 5px solid var(--blue);
+  outline: 3px solid var(--blue);
+  outline-offset: 12px;
+
+  background:
+    linear-gradient(rgba(31,63,183,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31,63,183,0.08) 1px, transparent 1px),
+    radial-gradient(#3F63E6 1px, transparent 1px),
+    radial-gradient(#3F63E6 1px, transparent 1px);
+
+  background-size:
+    40px 40px,
+    40px 40px,
+    4px 4px,
+    4px 4px;
+
+  background-position:
+    0 0,
+    0 0,
+    0 0,
+    2px 2px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================= CENTER ================= */
+.album-center {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ================= HOME CD ================= */
+.photo-wrap {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 3px solid var(--blue);
+  padding: 8px;
+  position: relative;
+  animation: spin 18s linear infinite;
+}
+
+.photo-wrap img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.photo-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+}
+
+.photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    repeating-radial-gradient(
+      circle,
+      rgba(0,0,0,0.04) 0px,
+      rgba(0,0,0,0.04) 1px,
+      transparent 2px,
+      transparent 4px
+    );
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ================= TITLE ================= */
+.album-title {
+  font-size: 72px;
+  letter-spacing: 14px;
+  margin-bottom: 14px;
+}
+
+.divider {
+  width: 120px;
+  height: 1px;
+  background: var(--blue);
+  margin: 18px auto 30px;
+}
+
+.album-sub {
+  font-size: 14px;
+  letter-spacing: 4px;
+}
+
+/* ================= NAV ================= */
+.album-nav {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.album-nav a {
+  text-decoration: none;
+  color: var(--blue);
+  border: 2px solid var(--blue);
+  padding: 14px 32px;
+  letter-spacing: 3px;
+  transition: .2s;
+}
+
+.album-nav a:hover {
+  background: var(--blue);
+  color: var(--cream);
+}
+
+/* =================================================
+   SKILLS – TRACKLIST
+   ================================================= */
+.skills-page .tracklist {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.skills-page .track {
+  background: rgba(250,247,242,0.95);
+  border: 2px solid var(--blue);
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: .25s;
+}
+
+.skills-page .track:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(31,63,183,0.25);
+}
+
+.skills-page .track-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.skills-page .track-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at top left,
+      rgba(255,255,255,0.95),
+      rgba(250,247,242,0.9) 45%,
+      rgba(220,220,220,0.6)
+    );
+  border: 2px solid var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills-page .track-no {
+  font-size: 12px;
+}
+
+.skills-page .track-title {
+  font-size: 14px;
+}
+
+.skills-page .track-percent {
+  font-size: 14px;
+}
+
+/* =================================================
+   PROJECTS – CD
+   ================================================= */
+.projects-page .cd-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  margin-top: 40px;
+}
+
+.projects-page .cd-card {
+  text-align: center;
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.projects-page .cd-disc {
+  width: 170px;
+  height: 170px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 3px solid var(--blue);
+  padding: 10px;
+  animation: cdSpin 14s linear infinite;
+  position: relative;
+}
+
+.projects-page .cd-disc::before {
+  content: "";
+  position: absolute;
+  inset: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+}
+
+.projects-page .cd-disc::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    repeating-radial-gradient(
+      circle,
+      rgba(0,0,0,0.05) 0px,
+      rgba(0,0,0,0.05) 1px,
+      transparent 2px,
+      transparent 4px
+    );
+}
+
+@keyframes cdSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* =================================================
+   CONTACT – POLAROID CLEAN
+   ================================================= */
+.contact-page .album-inner {
+  align-items: center;
+}
+
+.contact-page .album-center {
+  max-width: 520px;
+  margin-top: -20px;
+}
+
+.contact-card {
+  background: rgba(250,247,242,0.95);
+  border: 2px solid var(--blue);
+  padding: 28px 24px 26px;
+  position: relative;
+}
+
+.contact-card .tape {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+  width: 90px;
+  height: 22px;
+  background: rgba(250,247,242,0.9);
+  border: 1px solid var(--blue);
+}
+
+.contact-photo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  border: 3px solid var(--blue);
+  padding: 6px;
+}
+
+.contact-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.contact-name {
+  font-size: 22px;
+  letter-spacing: 3px;
+  margin: 4px 0 2px;
+}
+
+.contact-sub {
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  opacity: .75;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-links a {
+  border: 2px solid var(--blue);
+  padding: 10px;
+  text-decoration: none;
+  color: var(--blue);
+  letter-spacing: 2px;
+  transition: .2s;
+}
+
+.contact-links a:hover {
+  background: var(--blue);
+  color: var(--cream);
+}
+
+/* ================= BACK ================= */
+.back {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  border: 2px solid var(--blue);
+  padding: 8px 16px;
+  background: rgba(250,247,242,0.95);
+  text-decoration: none;
+  color: var(--blue);
+}
+
+.back:hover {
+  background: var(--blue);
+  color: var(--cream);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .skills-page .tracklist,
+  .projects-page .cd-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .skills-page .tracklist,
+  .projects-page .cd-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =================================================
+   CONTACT – FIX SIZE & GRID (TAMBAHAN SAJA)
+   ================================================= */
+
+/* kecilkan judul contact */
+.contact-page .album-title {
+  font-size: 56px;        /* sebelumnya 72px */
+  letter-spacing: 10px;
+  margin-bottom: 10px;
+}
+
+/* rapatkan posisi card supaya naik */
+.contact-page .album-center {
+  margin-top: -10px;
+}
+
+/* ubah kontak jadi 2x2 */
+.contact-page .contact-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+/* kecilkan tombol kontak dikit biar muat */
+.contact-page .contact-links a {
+  padding: 10px 8px;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+/* ================= BACK BUTTON – DALAM FRAME ================= */
+.back {
+  position: fixed;
+  top: 64px;     /* turun dikit biar masuk frame */
+  left: 64px;    /* geser kanan dikit biar ga nabrak garis */
+  z-index: 999;
+
+  border: 2px solid var(--blue);
+  padding: 8px 16px;
+  background: rgba(250,247,242,0.95);
+  text-decoration: none;
+  color: var(--blue);
+  letter-spacing: 2px;
+  transition: 0.2s;
+}
+
+.back:hover {
+  background: var(--blue);
+  color: var(--cream);
+}
+
+/* =================================================
+   HOME – FIX POSISI NAV BIAR GA KEBAWAH
+   ================================================= */
+
+/* naikkan grup tombol */
+.album-nav {
+  margin-top: 18px;      /* sebelumnya terlalu besar */
+}
+
+/* kalau masih kebawah, ini bikin konten keseluruhan naik dikit */
+.album-center {
+  margin-top: -20px;
+}
+
+/* =================================================
+   HOME – FOTO DI ATAS NAMA (JARAK AMAN & ESTETIK)
+   ================================================= */
+
+/* jarak foto ke teks nama */
+.photo-wrap {
+  margin-bottom: 28px;   /* jarak foto ke "NAMA KAMU" */
+}
+
+/* pastikan judul nama tidak naik terlalu dekat */
+.album-title {
+  margin-top: 0;
+}
+
+/* =================================================
+   HOME – Y2K DECOR ICONS (NEWJEANS / COOKIE STYLE)
+   ================================================= */
+
+.y2k-icon {
+  position: absolute;
+  opacity: 0.65;
+  filter: contrast(110%) saturate(90%);
+  pointer-events: none;
+  animation: y2kFloat 6s ease-in-out infinite;
+}
+
+/* POSISI ICON */
+.cd1 {
+  top: 10%;
+  left: 6%;
+  width: 160px;
+}
+
+.cd2 {
+  bottom: 16%;
+  right: 8%;
+  width: 180px;
+  animation-delay: 1.5s;
+}
+
+.ipod {
+  top: 28%;
+  right: 22%;
+  width: 90px;
+  animation-delay: 2s;
+}
+
+.cart {
+  top: 16%;
+  right: 10%;
+  width: 80px;
+  animation-delay: 3s;
+}
+
+.headphone {
+  bottom: 22%;
+  left: 14%;
+  width: 110px;
+  animation-delay: 1s;
+}
+
+.cloud {
+  top: 38%;
+  left: 24%;
+  width: 70px;
+  animation-delay: 2.5s;
+}
+
+/* FLOAT ANIMATION */
+@keyframes y2kFloat {
+  0%,100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(2deg);
+  }
+}
+
+/* HALFTONE FEEL */
+.y2k-icon {
+  mask-image: radial-gradient(circle, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);
+}
+
+/* ================= ABOUT BOX ================= */
+.about-box {
+  background: rgba(250, 247, 242, 0.95); /* putih creamy */
+  border: 2px solid var(--blue);
+  padding: 26px 28px;
+  max-width: 560px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* optional: efek polaroid / y2k */
+.about-box::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 90px;
+  height: 20px;
+  background: rgba(250,247,242,0.9);
+  border: 1px solid var(--blue);
+}
+
+/* teksnya */
+.about-text {
+  font-size: 13px;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  opacity: 0.85;
+}
+
+/* ================= ABOUT – BACK BUTTON DALAM CARD ================= */
+.about-back {
+  display: inline-block;
+  margin-top: 2px;
+
+  padding: 8px 20px;
+  border: 2px solid var(--blue);
+  background: rgba(250,247,242,0.95);
+
+  text-decoration: none;
+  color: var(--blue);
+  font-size: 13px;
+  letter-spacing: 2px;
+
+  box-shadow: 3px 3px 0 var(--blue);
+  transition: all 0.2s ease;
+}
+
+/* hover ala Y2K */
+.about-back:hover {
+  background: var(--blue);
+  color: var(--cream);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--blue);
+}
+
+/* klik */
+.about-back:active {
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 0 var(--blue);
+}
+
+.skills-page .track-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
+.skills-page .track-icon {
+  overflow: hidden;
+}
+
+/* =================================================
+   PROJECTS – FIX IMAGE SIZE (WAJIB)
+   ================================================= */
+
+.projects-page .cd-disc {
+  overflow: hidden;          /* potong gambar keluar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-page .cd-disc img {
+  width: 80%;                /* KONTROL UKURAN GAMBAR */
+  height: 80%;
+  object-fit: contain;       /* biar proporsional */
+  display: block;
+}
+
+/* =================================================
+   PROJECTS – IMAGE PAS DI BULAT CD
+   ================================================= */
+
+.projects-page .cd-disc {
+  position: relative;
+  overflow: hidden;          /* potong keluar lingkaran */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-page .cd-disc img {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;        /* bikin gambar bulat */
+  object-fit: cover;         /* isi lingkaran dengan rapi */
+  display: block;
+}
+
+/* =================================================
+   PROJECTS – IMAGE PAS DI BULAT CD
+   ================================================= */
+
+.projects-page .cd-disc {
+  position: relative;
+  overflow: hidden;          /* potong keluar lingkaran */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-page .cd-disc img {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;        /* bikin gambar bulat */
+  object-fit: cover;         /* isi lingkaran dengan rapi */
+  display: block;
+}
+
+/* =========================================
+   PROJECT DETAIL – FIX IMAGE SIZE
+   ========================================= */
+
+.project-detail-page .detail-cd {
+  max-width: 820px;          /* batas lebar konten */
+  margin: 0 auto 48px;      /* tengah + jarak antar gambar */
+  padding: 18px;
+}
+
+/* gambar di dalamnya */
+.project-detail-page .detail-cd img {
+  width: 100%;
+  max-width: 300px;         /* INI KUNCI: cegah kegedean */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+/* =========================================
+
+/* =========================================
+/* =========================================
+   PROJECT DETAIL – GRID RAPI (FINAL)
+   ========================================= */
+
+.project-detail-page .album-center {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* GRID KHUSUS GAMBAR */
+.project-detail-page .detail-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+/* KARTU GAMBAR */
+.project-detail-page .detail-cd {
+  background: rgba(250,247,242,0.95);
+  border: 2px solid var(--blue);
+  padding: 14px;
+}
+
+/* GAMBAR */
+.project-detail-page .detail-cd img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .project-detail-page .detail-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= FIGMA – 1 FOTO TENGAH ================= */
+
+.figma-single {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.figma-single img {
+  width: 100%;
+  max-width: 200px;   /* biar ga kegedean */
+  height: auto;
+  border: 2px solid var(--blue);
+  padding: 12px;
+  background: rgba(250,247,242,0.95);
+}
+
+/* ================= CANVA – FOTO SEJAJAR ================= */
+
+.canva-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.canva-card {
+  background: rgba(250,247,242,0.95);
+  border: 2px solid var(--blue);
+  padding: 12px;
+}
+
+.canva-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .canva-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .canva-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= CONTACT – FOTO TIDAK GEPENG ================= */
+
+.contact-photo {
+  width: 110px;
+  height: 110px;           /* PAKSA KOTAK */
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  border: 3px solid var(--blue);
+  padding: 6px;
+  overflow: hidden;       /* POTONG LUAR LINGKARAN */
+}
+
+.contact-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* KUNCI ANTI GEPENG */
+  border-radius: 50%;
+  display: block;
+}
+
+#music-start {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+
+  border: 2px solid var(--blue);
+  padding: 10px 18px;
+  background: rgba(250,247,242,0.95);
+
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+
+  box-shadow: 3px 3px 0 var(--blue);
+}
+
+#music-start:hover {
+  background: var(--blue);
+  color: var(--cream);
+}
+
+.music-btn {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+
+  border: 2px solid var(--blue);
+  background: rgba(250,247,242,0.95);
+  color: var(--blue);
+
+  padding: 10px 18px;
+  font-family: "Times New Roman", serif;
+  letter-spacing: 2px;
+  cursor: pointer;
+
+  box-shadow: 4px 4px 0 var(--blue);
+  transition: 0.2s;
+}
+
+.music-btn:hover {
+  background: var(--blue);
+  color: var(--cream);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--blue);
+}
+
+.desc {
+  background: rgba(250,247,242,0.9);
+  padding: 18px 22px;
+  margin: 30px auto;
+  max-width: 520px;
+
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: 1px;
+}
+
+/* ================= THEME BUTTON ================= */
+.theme-btn {
+  position: fixed;
+  top: 64px;
+  right: 64px;
+  z-index: 999;
+
+  padding: 10px 18px;
+  font-family: "Times New Roman", serif;
+  letter-spacing: 2px;
+  font-size: 13px;
+
+  border: 2px solid var(--blue);
+  background: rgba(250,247,242,0.95);
+  color: var(--blue);
+  cursor: pointer;
+
+  box-shadow: 4px 4px 0 var(--blue);
+  transition: 0.2s;
+}
+
+.theme-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--blue);
+}
+
+/* ================= PINK MODE ================= */
+body.pink-mode {
+  --blue: #E84C88;
+  --cream: #FFF0F6;
+}
+
+/* background ikut pink */
+body.pink-mode .album-inner {
+  background:
+    linear-gradient(rgba(232,76,136,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,76,136,0.08) 1px, transparent 1px),
+    radial-gradient(#F6A1C6 1px, transparent 1px),
+    radial-gradient(#F6A1C6 1px, transparent 1px);
+}
+/* ================= PINK MODE ================= */
+.pink-mode {
+  --blue: #FF7FBF;   /* pink pastel */
+  --cream: #FFF0F6; /* creamy pink */
+}
+
+/* ================= Y2K DECOR ICON ================= */
+.decor {
+  position: absolute;
+  width: 100px;
+  opacity: 0.6;
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+  filter: contrast(110%) saturate(90%);
+}
+
+/* POSISI SATU-SATU */
+.d1 {
+  top: 12%;
+  left: 8%;
+}
+
+.d2 {
+  top: 5%;
+  right: 3%;
+  animation-delay: 1s;
+}
+
+.d3 {
+  bottom: 18%;
+  left: 14%;
+  animation-delay: 2s;
+}
+
+.d4 {
+  bottom: 12%;
+  right: 5%;
+  animation-delay: 3s;
+  width: 250px;
+}
+
+.d5 {
+  top: 40%;
+  left: 20%;
+  width: 50px;
+  animation-delay: 1.5s;
+}
+
+.d6 {
+  bottom: 10%;
+  left: 5%;
+  width: 100px;
+  animation-delay: 1.5s;
+}
+
+.d7 {
+  right: 5%;
+  width: 100px;
+  bottom: 10%;
+  animation-delay: 1.5s;
+}
+
+.s1 {
+  top: 12%;
+  left: 5%;
+  width: 15%;
+}
+
+.s2 {
+  top: 1%;
+  right: 3%;
+  width: 20%;
+  animation-delay: 1s;
+}
+
+.s3 {
+  bottom: 5%;
+  left: 1%;
+  width: 15%;
+  animation-delay: 2s;
+}
+
+.s4 {
+  bottom: 20%;
+  right: 5%;
+  animation-delay: 3s;
+  width: 100px;
+}
+
+.s5 {
+  top: 3%;
+  left: 30%;
+  width: 100px;
+  animation-delay: 1.5s;
+}
+
+.c1 {
+  top: 12%;
+  left: 5%;
+  width: 15%;
+}
+
+.c2 {
+  top: 1%;
+  right: 3%;
+  width: 20%;
+  animation-delay: 1s;
+}
+
+.c3 {
+  bottom: 5%;
+  left: 1%;
+  width: 15%;
+  animation-delay: 2s;
+}
+
+.c4 {
+  bottom: 30%;
+  right: 5%;
+  animation-delay: 3s;
+  width: 100px;
+}
+
+.c5 {
+  top: 3%;
+  left: 30%;
+  width: 100px;
+  animation-delay: 1.5s;
+}
+
+.c6 {
+  left: 1%;
+  width: 15%;
+  animation-delay: 2s;
+}
+
+.c7 {
+  bottom: 5%;
+  right: 5%;
+  animation-delay: 3s;
+  width: 100px;
+}
+
+.p1 {
+  top: 12%;
+  left: 5%;
+  width: 15%;
+}
+
+.p2 {
+  top: 1%;
+  right: 100%;
+  width: 10%;
+  animation-delay: 1s;
+}
+
+/* =====================================
+   FIX PALING FINAL – MOBILE 100VH BUG
+   ===================================== */
+
+  /* JANGAN PAKAI 100vh DI HP */
+  .album {
+    width: 100%;
+    min-height: 100svh;
+  }
+
+  .album-inner {
+    height: auto;
+    min-height: 100%;
+  }
+
+/* ===============================
+   FIX BUTTON MUSIC DI HP
+   =============================== */
+
+  #music-start,
+  .music-btn {
+    font-size: 11px;          /* kecilin teks */
+    letter-spacing: 1px;     /* KUNCI: jangan 2px */
+    padding: 6px 12px;       /* kecilin padding */
+    width: auto;
+    max-width: max-content;        /* cegah kepanjangan */
+    white-space: nowrap;     /* teks 1 baris */
+  }
+
+.theme-btn {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 999;
+}
+
+.music-btn,
+#music-start {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 999;
+}
+
+.album-title {
+  font-size: clamp(28px, 7vw, 36px);
+  letter-spacing: clamp(2px, 1.2vw, 4px);
+}
+
+.projects-page .album {
+  height: auto;
+  min-height: 100vh;
+}
+
+.projects-page .album-inner {
+  height: auto;
+  min-height: 100%;
+}
+
+/* ===============================
+   FORCE DESKTOP MODE (HP)
+   =============================== */
+
+.desktop-force {
+  min-width: 1200px;
+}
+
+.desktop-force .album {
+  width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.desktop-force .album-inner {
+  width: 100%;
+  height: 100%;
+}
+
+html, body {
+  overflow-x: auto;
+}
